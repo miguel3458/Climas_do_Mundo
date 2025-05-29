@@ -1,90 +1,39 @@
-📦 Plataforma de Gestão de Dados Pessoais
-Este projeto é uma aplicação em Python para gerenciar dados pessoais com foco em cibersegurança, proteção de dados (LGPD) e boas práticas de desenvolvimento, integrando validações, criptografia, controle de acesso e testes automatizados.
+Climas_do_Mundo
+Descrição
+Este é um app simples em Python que consulta a API do OpenWeather para mostrar o clima atual de qualquer cidade. A interface gráfica foi criada com Tkinter, permitindo que o usuário digite o nome da cidade e veja informações como temperatura, sensação térmica, umidade e descrição do clima.
 
-🚀 Funcionalidades
-🔒 Cadastro com criptografia de CPF, nome e senha.
+Arquivos do projeto
+main.py: faz a requisição à API do OpenWeather, salva a resposta no arquivo tempo.json e retorna um dicionário com os dados do clima que serão exibidos.
 
-🔑 Login com autenticação segura.
+interface.py: cria a interface gráfica, recebe a cidade digitada pelo usuário, chama a função de busca do main.py e exibe as informações na tela.
 
-👥 Diferentes permissões de usuário (admin e comum).
+tempo.json: arquivo JSON onde a resposta da API é salva localmente, contendo dados detalhados como coordenadas, temperatura, umidade, vento, entre outros.
 
-🗂️ Listagem, exclusão e manipulação segura dos dados.
+Exemplo de conteúdo do tempo.json
+O arquivo contém dados como:
 
-🧪 Testes automatizados com unittest.
+Coordenadas geográficas (latitude e longitude)
 
-💾 Armazenamento local seguro via arquivo .json.
+Condições do tempo ("description": "céu limpo")
 
-🔧 Tecnologias e Bibliotecas
-Python 3.11+
+Temperatura atual, mínima, máxima e sensação térmica
 
-cryptography – para criptografia AES dos dados sensíveis.
+Umidade, pressão, visibilidade e velocidade do vento
 
-unittest – para testes automatizados.
+Informações de nascer e pôr do sol
 
-json – para armazenamento dos dados.
+Configuração e uso
+Tenha o Python 3.8+ instalado.
 
-getpass – para esconder senhas no terminal.
+Instale a biblioteca requests (Tkinter já vem com o Python):
 
-os, base64, uuid – utilitários do sistema e geração de chaves.
+pip install requests
 
-🛠️ Como Executar
-Clone o repositório ou copie os arquivos para seu ambiente:
+O projeto usa a API do OpenWeather, que necessita de uma chave (API key). No arquivo main.py, substitua o valor da variável chave pela sua chave obtida em https://openweathermap.org/api.
 
+Execute o programa com:
 
-git clone https://github.com/seuusuario/nome-do-projeto.git
-cd nome-do-projeto
-Crie um ambiente virtual (opcional, mas recomendado):
+python interface.py
 
+Na janela que abrir, digite o nome da cidade e clique em "Buscar clima" para ver as informações.
 
-python -m venv venv
-venv\Scripts\activate  # Windows
-source venv/bin/activate  # Linux/Mac
-Instale a dependência de criptografia:
-
-
-pip install cryptography
-Execute o programa principal:
-
-
-python main.py
-Execute os testes:
-
-
-python test_sistema.py
-🧩 Estrutura de Arquivos
-
-📁 projeto/
-├── main.py               # Código principal da aplicação
-├── criptografia.py       # Funções de criptografia e descriptografia
-├── utils.py              # Funções auxiliares (validação, geração de chaves, etc.)
-├── test_sistema.py       # Testes automatizados com unittest
-├── dados.json            # Armazena os dados dos usuários criptografados
-├── chave.key             # Chave de criptografia (armazenar com segurança)
-└── README.md             # Este arquivo
-🛡️ Segurança e LGPD
-Todos os dados sensíveis são criptografados com AES-256 em repouso.
-
-A senha é criptografada e nunca armazenada em texto puro.
-
-Implementação de autenticação forte com validação de e-mail e senha.
-
-Cumprimento de requisitos da LGPD:
-
-Coleta mínima de dados
-
-Possibilidade de exclusão (direito ao esquecimento)
-
-Controle de acesso por níveis (admin/comum)
-
-Transparência e consentimento
-
-🧠 Contribuições Acadêmicas
-Este projeto atende aos tópicos exigidos para o PIM II:
-
-✅ Pensamento Lógico e Computacional com Python
-
-✅ Cibersegurança
-
-✅ LGPD (Lei Geral de Proteção de Dados)
-
-✅ Infraestrutura Computacional (descrito no relatório técnico)
